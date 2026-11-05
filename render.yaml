@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: queen-riam
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BOT_INTERNAL_PORT
+        value: "10001"
+      - key: OWNER_NUMBER
+        sync: false
+      - key: DB_TYPE
+        value: ""
